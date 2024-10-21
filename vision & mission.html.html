@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samriddhi School</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<!-- Our Vision Section -->
+<div id="chairmanMessage" class="chairman-message-container scroll-reveal">
+    <div class="chairman-image">
+      <img src="image.png" alt="Chairman" /> 
+    </div>
+    <br> <br> <br><br> 
+    <div class="message-text invisible">
+      <h2>Our Vision</h2> 
+      <p>We envision Samriddhi School as a dynamic and inspiring educational institution that sets an example for the learning community.</p>
+                    <p>We are committed to providing an outstanding learning environment to our students, to enable them to excel and thrive in a complex, constantly changing world, getting more interconnected by the day.</p>
+    </div>
+  </div>
+
+<!-- OUR MISSION SECTION -->
+  <div class="mission-section">
+    <div class="mission-content">
+        <h2>Our Mission</h2>
+        <p>
+            The mission of Buddha Smriti Education Foundation is to produce lifelong learners 
+            with a value system that turns them into good human beings. 
+            Honesty, integrity, and sincerity are values that form the strong 
+            foundation on which we build an educational process, culminating 
+            in academic and personal success of our students.
+            <br><br>
+            To this end, we make use of the best educational practices and a 
+            rich curriculum. Added to this, we plan on collaborating with all 
+            stakeholders including students, parents, families, business houses, 
+            civic organizations, higher education institutions, and the 
+            community at large.
+        </p>
+    </div>
+    <div class="mission-image">
+        <img src="image.png" alt="Children learning outdoors">
+    </div>
+</div>
+
+<!--OUR CORE VALUES -->
+<div class="core-values-section hidden">
+  <div class="core-values-image">
+      <img src="image.png" alt="Classroom">
+  </div>
+  <div class="core-values-content">
+      <h2>Our Core Values</h2>
+      <p>Building quality lives and strong culture through...</p>
+      <ul>
+          <li>✔ Compassion</li>
+          <li>✔ Respect</li>
+          <li>✔ Service</li>
+          <li>✔ Excellence</li>
+          <li>✔ Responsibility</li>
+          <li>✔ Teamwork</li>
+          <li>✔ Integrity</li>
+          <li>✔ Empowerment</li>
+      </ul>
+  </div>
+</div>
+
+
+<style>
+  
+/* OUR VISION SECTION BEGINS*/
+/* Simulated content before and after */
+.content-above {
+    height: 800px; /* Simulate scrolling */
+    background-color: #f0f0f0;
+  }
+  .content-below {
+    height: 800px; /* Simulate more content below */
+    background-color: #f0f0f0;
+  }
+  /* Chairman message container */
+  .chairman-message-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin: 50px auto;
+    max-width: 1200px;
+  
+    /* White transparent background */
+    background-color: rgba(255, 255, 255); /* White with 70% opacity for transparency */
+    gap: 20px;
+    position: relative; /* Ensure it's positioned above the video */
+    z-index: 10; /* Keeps it above the video */
+    opacity: 0;
+    transition: opacity 1s ease-out;
+  }
+  
+  /* Image slides to the right */
+  .chairman-image {
+    flex-shrink: 0;
+    width: 500px;
+    height: 300px;
+    border-radius: 100% 64% 84% 68% / 78% 77% 62% 54%;
+    transform: translateX(-50%); /* Move left initially */
+    transition: transform 1s ease-out;
+  }
+  
+  .chairman-image img {
+    width: 100%;
+    height: 400px;
+    border-radius: 100% 64% 84% 68% / 78% 77% 62% 54%;
+  }
+  
+  /* Text slides to the left */
+  .message-text {
+    flex: 2;
+    transform: translateX(50%); /* Move right initially */
+    transition: transform 1s ease-out;
+  }
+  
+  .message-text h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .message-text p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 15px;
+  }
+  
+  /* When the element becomes visible, trigger the animations */
+  .chairman-message-container.visible {
+    opacity: 1;
+  }
+  .chairman-message-container.visible .chairman-image {
+    transform: translateX(0); /* Slide back to the original position */
+  }
+  .chairman-message-container.visible .message-text {
+    transform: translateX(0); /* Slide back to the original position */
+  }
+  /* Responsive styling */
+  @media (max-width: 768px) {
+    .chairman-message-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .chairman-image {
+      width: 100%;
+    }
+  
+    .message-text {
+      margin-top: 20px;
+    }
+  } /* OUR VISION COMPLETE */
+  
+/* OUR MISION SECTION BEGINS */
+.mission-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    background-color: #f9f9f9;
+    opacity: 1; /* Always visible, no fade effect */
+    flex-direction: row; /* Default for larger screens */
+    transition: all 0.5s ease-out;
+}
+
+.mission-content {
+    flex: 1;
+    padding-right: 20px;
+    transform: translateX(-200px); /* Slide more from the left */
+    transition: transform 0.5s ease-out; /* Faster speed */
+}
+
+.mission-content h2 {
+    font-size: 2rem;
+    color: #333;
+}
+
+.mission-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+.mission-image {
+    flex: 1;
+    padding-left: 20px;
+    transform: translateX(200px); /* Slide more from the right */
+    transition: transform 0.5s ease-out; /* Faster speed */
+}
+
+.mission-image img {
+    width: 100%;
+
+}
+
+/* Trigger animation once the user scrolls into view */
+.mission-section.animate .mission-content {
+    transform: translateX(0); /* Slide to original position */
+}
+
+.mission-section.animate .mission-image {
+    transform: translateX(0); /* Slide to original position */
+}
+
+/* Media Query for Phones (Small Screens) */
+@media (max-width: 768px) {
+    .mission-section {
+        flex-direction: column; /* Stack text and image vertically */
+        padding: 20px; /* Reduce padding for mobile */
+    }
+
+    .mission-content {
+        padding-right: 0;
+        padding-bottom: 20px; /* Add space below text for mobile */
+        text-align: center; /* Center align the text on mobile */
+        transform: translateX(0); /* No sliding on mobile for simplicity */
+    }
+
+    .mission-image {
+        padding-left: 0;
+        transform: translateX(0); /* No sliding on mobile */
+    }
+
+    .mission-content h2 {
+        font-size: 1.5rem; /* Reduce heading size on mobile */
+    }
+
+    .mission-content p {
+        font-size: 0.9rem; /* Adjust text size for mobile */
+    }
+
+    .mission-image img {
+        width: 80%; /* Reduce image size for mobile */
+        margin: 0 auto; /* Center the image */
+    }
+} /* OUR MISSION COMPLETE */
+
+
+
+
+
+
+/* OUR CORE VALUES SECTION */
+* {
+  margin: 0;
+  padding: 0;
+
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  padding: 20px;
+}
+
+.core-values-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.5s ease-in-out;
+}
+
+.core-values-section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.core-values-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 40px;
+}
+
+.core-values-image img {
+  width: 100%;
+  border-radius: 100% 47% 30% 41% / 10% 60% 55% 54%;
+
+  max-width: 500px;
+  object-fit: cover;
+}
+
+.core-values-content {
+  flex: 1;
+}
+
+.core-values-content h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.core-values-content p {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.core-values-content ul {
+  list-style: none;
+}
+
+.core-values-content ul li {
+  font-size: 1.2rem;
+  color: #27ae60;
+  margin-bottom: 10px;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .core-values-section {
+      flex-direction: column;
+  }
+
+  .core-values-image {
+      padding-right: 0;
+      margin-bottom: 20px;
+  }
+
+  .core-values-image img {
+      width: 80%;
+  }
+}
+
+/* Hidden by default, shown on scroll */
+.hidden {
+  opacity: 0;
+  transform: translateY(50px);
+}
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+</style>
+
+<script> 
+    
+  // our vision
+  // Intersection Observer to trigger animation when element is in viewport
+  document.addEventListener("DOMContentLoaded", function () {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        } else {
+          entry.target.classList.remove("visible");
+        }
+      });
+    }); 
+  
+    // Target the element with the 'scroll-reveal' class
+    const target = document.querySelector('.scroll-reveal');
+    observer.observe(target);
+  }); //our vision complete
+  
+  
+  //our mission
+  document.addEventListener("DOMContentLoaded", function() {
+    const section = document.querySelector('.mission-section');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                section.classList.add('animate');
+            } else {
+                section.classList.remove('animate');
+            }
+        });
+    }, {
+        threshold: 0.1 // When 10% of the section is visible
+    });
+
+    observer.observe(section);
+}); //our mission complete
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  const section = document.querySelector('.core-values-section');
+
+  const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              section.classList.add('show');
+          } else {
+              section.classList.remove('show');
+          }
+      });
+  }, {
+      threshold: 0.1
+  });
+
+  observer.observe(section);
+});
+
+</script>
+</body>
+</html>
