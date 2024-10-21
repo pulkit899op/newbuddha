@@ -43,14 +43,15 @@
 <nav class="navbar" style="font-family: Roboto, sans-serif; font-weight: bold; text-align: center;">
   <ul>
     <li><a href="index.html" style="color: black;">Home</a></li>
-    <li><a href="about-us.html" style="color: black;">About Us</a></li>
-    <li class="dropdown">
-      <a href="#" style="color: black;">Events</a>
-
+    <li class="dropdown" id="about-us">
+      <a href="about-us.html" style="color: black;">About Us</a>
+      <ul class="dropdown-content" id="dropdown-about-us">
+        <li><a href="chairman message.html" style="color: black;">Chairman's Message</a></li>
+      </ul>
     </li>
+    <li><a href="events.html" style="color: black;">Events</a></li>
     <li><a href="gallery.html" style="color: black;">Gallery</a></li>
     <li><a href="notice-board.html" style="color: black;">Notice Board</a></li>
-    <li><a href="faculty.html" style="color: black;">Faculty</a></li>
     <li><a href="contact-us.html" style="color: black;">Contact Us</a></li>
   </ul>
 </nav>
@@ -239,7 +240,70 @@
           </div>
   </footer>
   
-  
+<!-- CSS for Dropdown of NAV BAR -->
+<style>
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+/* Hide the dropdown content initially */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+.dropdown-content li {
+    list-style-type: none;
+  }
+
+.dropdown-content li a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+/* Show the dropdown content when hovering over About Us */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+/* Ensure dropdown content is only visible when hovering */
+  #dropdown-about-us {
+    display: none;
+  }
+</style>
+
+<!-- JavaScript to handle hover and hide functionality of dropdown of nav bar -->
+<script>
+  // Get the dropdown element
+  var aboutUsDropdown = document.getElementById('dropdown-about-us');
+
+  // Function to show dropdown when hovering over About Us
+  document.getElementById('about-us').addEventListener('mouseover', function() {
+    aboutUsDropdown.style.display = 'block';
+  });
+
+  // Function to hide dropdown when clicking outside
+  document.addEventListener('click', function(event) {
+    var aboutUs = document.getElementById('about-us');
+
+    // If the click is outside the dropdown, hide it
+    if (!aboutUs.contains(event.target)) {
+      aboutUsDropdown.style.display = 'none';
+    }
+  });
+
+  // Optional: Add hover out effect to hide the dropdown (if you want it to hide when not hovered)
+  document.getElementById('about-us').addEventListener('mouseleave', function() {
+    setTimeout(function() {
+      aboutUsDropdown.style.display = 'none';
+    }, 200); // Optional delay for better UX
+  });
+</script>
 <!-- JavaScript -->
 <script src="script.js"></script>
 </body>
